@@ -1,0 +1,5 @@
+pencarian menggunakan file index.php, memproses pada prosesnama.php, menampilkan pada data.php
+
+input menggunakan file input.php, pemproses pada file masukdata.php, menampilkan pada data.php
+
+edit menggunakan file edit.php, memproses pada file prosesnama.php, menampilkan kembali pada data.php
