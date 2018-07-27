@@ -1,37 +1,9 @@
 <?php
-require('prosesnama.php'); 
-
-error_reporting(0);
-
+    include 'base.php';
+    require('prosesnama.php'); 
+    error_reporting(0);
 ?>
-<!-- 1511521023 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nagari Air Haji || Data</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
-</head>
-
-<body>
-<div class="row">
-    <div class="col-md-12">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                <th> <a href="index.php"><font color="white">Pencarian</font></a>  || 
-                     <a href="input.php"><font color="white">Pencatatan</font></a>  ||  
-                     <a href="data.php"><font color="white">Data</font></a> 
-                </th> 
-                </tr>            
-            </thead>
-        </table>
-    </div>
-</div>
+<?php startblock('content') ?>
 
 
 <div align="right">
@@ -119,21 +91,5 @@ error_reporting(0);
     </div>
 </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="row">
-    <div class="col-md-12">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                <th><center>Nagari Air Haji@2018</center></th>
-                </tr>            
-            </thead>
-        </table>
-    </div>
-</div>
-</body>
-</html>
+<br><br><br><br><br>
+<?php endblock() ?>
