@@ -5,37 +5,38 @@
 ?>
 <?php startblock('content') ?>
 
-
+<br><br><br>
 <div align="right">
 <div class="col-md-12">
 <form action="data.php">
     <table>
         <br>
-        <td><input type="text" name="search" class="form-control" id="find" placeholder="Nama Kepala Keluarga" align="right"></td>
-        <td><button type="submit" class="btn btn-default" value="search">Search</button></td>
+        <td><input type="text" name="cari2" class="form-control" id="find" placeholder="Nama Kepala Keluarga" align="right"></td>
+        <td><button type="submit" class="btn btn-default" value="search">Cari</button></td>
     </table>
     </form>
 </div>
 </div>
 <?php
-    if($_GET['search']){
+    //Pencarian dari HOME
+    $sql = "SELECT * FROM kk" ;
+    if($_GET['cari']){
         //var_dump("string"); die();
-        $search = $_GET['search'];
-        if($search != ''){
-            $sql = "SELECT * FROM kk WHERE nama_kk LIKE '%$search%'" ;
-            $hasil = $db->query($sql);
+        $cari = $_GET['cari'];
+        if($cari != ''){
+            $sql = "SELECT * FROM kk WHERE id_kk LIKE '%$cari%'" ;
         }
     }
-
+    elseif($_GET['cari2']){
+        //var_dump("string"); die();
+        $cari2 = $_GET['cari2'];
+        if($cari2 != ''){
+            $sql = "SELECT * FROM kk WHERE nama_kk LIKE '%$cari2%'" ;
+        }
+    }
+    $hasil = $db->query($sql);
 ?>
 
-<div class="container">
-    <div class="row">
-        <h1>Data Kartu Keluarga Nagari Air Haji</h1>
-        <h2>Kecamatan Sungai Aur Kabupaten Pasaman Barat Provinsi Sumatera Barat</h2>
-        <h6>Kode Pos : 25661</h6>
-    </div>
-</div>
 <div class="container">
 <div class="row">
     <h2>Data Kepala Keluarga</h2>

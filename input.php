@@ -15,7 +15,7 @@
 </div>
 <div class="col-md-2"></div>
 <div class="col-md-8">
-    <form action="masukdata.php" method="POST" >
+    <form action="input.php" method="POST" >
         <div class="row">
             <div class="col-md-7">
                 <div class="form-group">
@@ -78,4 +78,34 @@
     </form>
 </div>
 <div></div>
+
+<?php
+include('connect.php'); 
+if (isset($_POST['submit'])) 
+{
+    $id = $_POST['id'];
+    $nokk = $_POST['id_kk'];
+    $nama = $_POST['nama_kk'];
+    $alamat = $_POST['alamat'];
+    $rtrw = $_POST['rt_rw'];
+    $kel = $_POST['kelurahan'];
+    $no_kk = $db->query("SELECT * FROM kk WHERE id_kk=$nokk");
+    //var_dump($no_kk->num_rows);
+
+    if($no_kk->num_rows > 0){
+      $sql = "UPDATE kk SET  id_kk='$nokk', nama_kk='$nama', alamat='$alamat', rt_rw='$rtrw', kelurahan='$kel', kecamatan='Sungai Aur', kabupaten_kota='Pasaman Barat', kode_pos='25661', provinsi='Sumatera Barat' WHERE id_kk=$nokk";
+      $hasil = $db->query($sql);
+      if($hasil)
+        header("Location:data.php");
+        //var_dump("expression");
+    }
+    else{
+      $input = "INSERT INTO kk (id_kk,nama_kk,alamat,rt_rw,kelurahan,kecamatan,kabupaten_kota,kode_pos,provinsi) VALUES ('$nokk','$nama','$alamat','$rtrw','$kel','Sungai Aur','Pasaman Barat','25661','Sumatera Barat')";
+      $hasil = $db->query($input);
+      $input_anggota = "INSERT INTO anggota (id_kk, nama_anggota_keluarga) VALUES ('$id','$nama')";
+      $hasil = $db->query($input_anggota);
+      //header("Location:data.php");
+    }
+}
+?>
 <?php endblock() ?>
