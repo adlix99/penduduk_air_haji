@@ -28,7 +28,6 @@ if(isset($_GET['id_kk']) && isset($_GET['aksi']))
     {
         $sql = "SELECT * FROM kk WHERE id_kk='$nokk'";
         $result = $db->query($sql);
-
         $kk = $result->fetch_assoc();
     }
     elseif($aksi == 'hapus')
