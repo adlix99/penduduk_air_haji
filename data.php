@@ -61,8 +61,8 @@
                         ?>
                         <tr>
                             <th scope="row"><?php echo $no++ ?></th>
-                            <td><?php echo $data['id_kk'] ?></td>
-                            <td><a href="anggota.php?id_kk=<?php echo $data['id'] ?>"><?php echo $data['nama_kk'] ?></a></td>
+                            <td><a href="anggota.php?id_kk=<?php echo $data['id'] ?>"><?php echo $data['id_kk'] ?></a></td>
+                            <td><?php echo $data['nama_kk'] ?></td>
                             <td><?php echo $data['alamat'] ?></td>
                             <td><?php echo $data['rt_rw'] ?></td>
                             <td><?php echo $data['kelurahan'] ?></td>
