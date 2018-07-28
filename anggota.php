@@ -175,7 +175,7 @@
                                         <td><?php echo $data['pekerjaan'] ?></td>
                                         <td><?php echo $data['status'] ?></td>
                                         <td>
-                                            <a href="tambah_anggota.php?aksi=edit&id=<?php echo $data['id'] ?>" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                            <a href="edit_anggota.php?aksi=edit&id=<?php echo $data['id'] ?>" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                             <a href="tambah_anggota.php?aksi=hapus&id=<?php echo $data['id'] ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
