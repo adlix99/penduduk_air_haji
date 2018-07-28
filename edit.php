@@ -17,6 +17,10 @@
             <h3>Edit KK</h3>
             <form action="data.php" method="POST" >
                 <div class="form-group">
+                    <input type="text" name="id_kk" class="form-control" id="id_kk" placeholder="Nomor Kartu Keluarga" value="<?= $kk['id'] ?>">
+                </div>
+
+                <div class="form-group">
                     <input type="text" name="id_kk" class="form-control" id="id_kk" placeholder="Nomor Kartu Keluarga" value="<?= $kk['id_kk'] ?>">
                 </div>
                 <div class="form-group">
@@ -43,11 +47,22 @@
                 <div class="form-group"> 
                     <input type="text" name="provinsi" class="form-control" id="provinsi" placeholder="Provinsi" value="<?= $kk['provinsi'] ?>">
                 </div>
-                <button type="submit" name="submit" class="btn btn-primary pull-right">Simpan</button>
+                <button type="submit" name="submit" class="btn btn-primary pull-right">Ubah</button>
             </form>
         </div>
     </div>
 </div>
-</div>
-</div>
+<?php
+    if(isset($_POST['submit'])){
+        $id = $_POST['id'];
+        $nokk = $_POST['id_kk'];
+        $nama = $_POST['nama_kk'];
+        $alamat = $_POST['alamat'];
+        $rt_rw = $_POST['rt_rw'];
+        $kelurahan = $_POST['kelurahan'];
+
+        $update = "UPDATE kk SET id_kk='$nokk', nama_kk='$nama', alamat='$alamat', rt_rw='$rt_rw', kelurahan='$kelurahan' WHERE id='$id'";
+        $db->query($update) or die(mysql_error());
+    }
+?>
 <?php endblock() ?>
