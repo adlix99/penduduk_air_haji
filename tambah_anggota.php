@@ -1,5 +1,17 @@
 <?php
 	include 'connect.php';
+	if($_GET['aksi'] && $_GET['id']){
+		$aksi = $_GET['aksi'];
+		$id = $_GET['id'];
+		if($aksi == 'hapus'){
+			$sql = "DELETE FROM anggota WHERE id='$id'";
+	        $result = $db->query($sql);
+	        header("Location:".$_SERVER["HTTP_REFERER"] );
+	        exit;
+		}
+	}
+
+
     if(isset($_POST['tambah'])){
         $no_ktp = $_POST['no_ktp'];
         $nama = $_POST['nama'];
@@ -9,7 +21,7 @@
         $agama = $_POST['agama'];
         $pendidikan = $_POST['pendidikan'];
         $pekerjaan = $_POST['pekerjaan'];
-        $satus = $_POST['status'];
+        $status = $_POST['status'];
         $id_kk = $_POST['id_kk'];
         //var_dump($id_kk);
         $sql = "INSERT INTO anggota (no_ktp, id_kk, nama_anggota_keluarga, jk, tempat_lahir, tgl_lahir, agama, pendidikan, pekerjaan, status) VALUES ('$no_ktp', '$id_kk', '$nama', '$jk', '$tempat_lhr', '$tgl_lhr', '$agama', '$pendidikan', '$pekerjaan', '$status')";

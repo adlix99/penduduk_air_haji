@@ -75,17 +75,17 @@
 
                             <div class="md-form mb-5">
                                 <div class="radio">
-                                    <label><input checked="" type="radio" name="jk" checked>Laki-laki</label>
+                                    <label><input checked="" type="radio" name="jk" value="Laki-laki">Laki-laki</label>
                                 </div>
                                 <div class="radio">
-                                    <label><input type="radio" name="jk">Perempuan</label>
+                                    <label><input type="radio" name="jk" value="Perempuan">Perempuan</label>
                                 </div>
                             </div>
 
                             <div class="md-form mb-5">
                                 <div class="form-group">
                                     <label for="tambah_agama">Agama</label>
-                                    <select class="form-control" id="tambah_agama" name="agama">
+                                    <select class="form-control" name="agama" id="tambah_agama">
                                         <option value="Islam">Islam</option>
                                         <option value="Kristen">Kristen</option>
                                         <option value="Protestan">Protestan</option>
@@ -112,12 +112,10 @@
                                 </div> 
                             </div>
 
-
                             <div class="md-form mb-5">
                                 <label data-error="wrong" data-success="right" for="form32">Pekerjaan</label>
-                                <input type="text" id="tambah_pekerjaan" name="pekerjaan" class="form-control validate" required="">
+                                <input type="text" name="pekerjaan" id="tambah_pekerjaan" class="form-control validate" required="">
                             </div>
-
 
                             <div class="md-form mb-5">
                                 <div class="form-group">
@@ -171,16 +169,14 @@
                                         <td><?php echo $data['no_ktp'] ?></td>
                                         <td><?php echo $data['nama_anggota_keluarga'] ?></td>
                                         <td><?php echo $data['jk'] ?></td>
-                                        <td><?php echo $data['tempat_lahir'] ?>, <?php echo $data['tgl_lahir'] ?></td>
+                                        <td><?php echo $data['tempat_lahir'] ?>, <?php echo date('d-M-Y', strtotime($data['tgl_lahir']))?></td>
                                         <td><?php echo $data['agama'] ?></td>
-                                        <td><?php echo $data['pekerjaan'] ?></td>
                                         <td><?php echo $data['pendidikan'] ?></td>
+                                        <td><?php echo $data['pekerjaan'] ?></td>
                                         <td><?php echo $data['status'] ?></td>
-                                        <td></td>
-                                        <td></td>
                                         <td>
-                                            <a href="edit.php?aksi=edit&id_kk=<?php echo $data['id'] ?>" class="btn btn-primary"><i class="fas fa-edit" ></i></a>
-                                            <a href="data.php?aksi=hapus&id_kk=<?php echo $data['id'] ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="tambah_anggota.php?aksi=edit&id=<?php echo $data['id'] ?>" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                            <a href="tambah_anggota.php?aksi=hapus&id=<?php echo $data['id'] ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                     <?php
